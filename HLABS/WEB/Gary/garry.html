@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Crabe Croustillant - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #e0f7fa; /* Couleur océan */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Police cartoon pour le theme Bob l'éponge */
+        }
+        .navbar {
+            background-color: #ffcc00; /* Couleur jaune éclatante pour la barre de navigation */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #ff5733; /* Couleur vive pour le titre */
+        }
+        .form-control, .btn {
+            border-radius: 10px; /* Arrondi pour les inputs et boutons */
+        }
+        .btn-secondary {
+            background-color: #ff5733; /* Couleur vive pour les boutons */
+            border-color: #ff5733;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background-color: #ff4519;
+            border-color: #ff4519;
+        }
+        .card {
+            border-radius: 20px; /* Arrondi pour les cartes */
+            background-color: #ffcc00; /* Fond jaune */
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.2); /* Ombre cartoon */
+            margin-bottom: 20px;
+        }
+        .card-header {
+            background-color: #ff5733;
+            color: white;
+            font-size: 1.5em;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+        }
+        .card-body {
+            padding: 20px;
+            background-color: #fff;
+        }
+        .table {
+            background-color: #fff;
+            border-radius: 10px;
+        }
+        h5 {
+            font-weight: bold;
+            color: #ff5733;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">Crabe Croustillant - Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Message de succès -->
+        
+        <!-- Section d'ajout de menu -->
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ajouter ou consulter votre commande</h5>
+                        <!-- Formulaire pour accéder aux menus -->
+                        <form method="POST" action="/gary.php" class="mb-3">
+                            <div class="input-group mb-3">
+                                <input type="text" name="notepad_id" class="form-control" placeholder="ID de la commande">
+                                <button class="btn btn-secondary" type="submit">Voir la commande</button>
+                            </div>
+                        </form>
+                        <!-- Formulaire pour ajouter un menu -->
+                        <form method="POST" action="/gary.php">
+                            <div class="input-group">
+                                <input type="text" name="notepad" class="form-control" placeholder="Nom du plat à ajouter">
+                                <button class="btn btn-secondary" type="submit">Ajouter le plat</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Table de commandes -->
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header">Vos Commandes</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tbody>
+                            <tr><td>helb{Y0U_4r3_V3rY_1mPr3sS1V3_8Ut_7H1s_15_0N1Y_7H3_83g1nN1N6}</td></tr><tr><td>aezae</td></tr><tr><td>azaeaze</td></tr><tr><td>eazeaz</td></tr><tr><td>azeazeaz</td></tr><tr><td>aezazeararaz</td></tr><tr><td>ccc</td></tr><tr><td>aae</td></tr><tr><td>246e4b7f8638b3790c015d278b293003</td></tr><tr><td>246e4b7f8638b3790c015d278b293003</td></tr>                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
