@@ -1,0 +1,5 @@
+# Ignore .dd files
+*.dd
+
+# Ignore .vhd files
+*.vhd

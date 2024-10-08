@@ -1,0 +1,33 @@
+<?php
+session_start();
+/*************************
+Securité 3
+-------------
+Cross Site Scripting (XSS)
+
+hack data : 
+	<script>document.location = 'http://www.google.be'</script>
+	<script>alert(document.cookie)</script>
+	<script>document.write()</script>
+*************************/
+$formulaire = <<<EOT
+<p>Formulaire original</p>
+<form action="securite3_xss.php" method="GET">
+	<select name="sexe">
+		<option value="H">Homme</option>
+		<option value="F">Femme</option>
+	</select>
+	<input type="submit" value="valider"/>
+</form>
+EOT;
+
+/*Si le formulaire a déjà été validé alors on ne l'affiche plus*/
+if(isset($_GET['sexe']))
+{
+	echo 'Votre sexe est '.$_GET['sexe'];
+}
+else
+{
+	echo $formulaire;
+}
+?>

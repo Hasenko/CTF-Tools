@@ -1,0 +1,139 @@
+POST /login HTTP/1.1
+Host: cha.ccu-ctf.be:5789
+Connection: keep-alive
+Content-Length: 178
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+Origin: http://cha.ccu-ctf.be:5789
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Referer: http://cha.ccu-ctf.be:5789/login
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: csrftoken=YnSxxd1AriPumauhT1jyXZp6lKKEvJov; shortscc=44
+
+csrfmiddlewaretoken=Kpb2p58REB3TSJYhzwhKXAbxW4NnmuqZyCTpM8ZhVJId4Jioinq8Kpqt7EnRH3Ek&username=user&password=1234&captcha_0=e7dd3b0798335213fa47bd84e1fa43e4be88662b&captcha_1=DCNFHTTP/1.1 200 OK
+Server: nginx/1.23.2
+Date: Wed, 17 Apr 2024 12:45:28 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 1748
+Connection: keep-alive
+X-Frame-Options: DENY
+Vary: Cookie
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+Set-Cookie: csrftoken=YnSxxd1AriPumauhT1jyXZp6lKKEvJov; expires=Wed, 16 Apr 2025 12:45:28 GMT; Max-Age=31449600; Path=/; SameSite=Lax
+
+
+
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<link href="/static/bfcaptcha/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/bfcaptcha/css/login.css" rel="stylesheet">
+	</head>
+
+	<body class="text-center">
+		<main class="form-signin w-100 m-auto">
+			<form method="post">
+               <input type="hidden" name="csrfmiddlewaretoken" value="YTfwX4ON0MVbQ1NKT696hyswOJMACo5OM6XTk7FdhUAv217RCXiu4nHsZjm4XXj9">
+				<h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+                
+                    <div class="alert alert-danger">
+                        
+                            Invalid username and/or password
+                        
+                    </div>
+                
+
+				<div class="form-floating">
+					 <input type="text" name="username" value="user" required placeholder="Username" class="form-control" aria-invalid="true" id="id_username">
+					<label for="username">Username</label>
+				</div>
+
+				<div class="form-floating">
+					<input type="password" name="password" value="1234" required placeholder="Password" class="form-control" id="id_password">
+					<label for="password">Password</label>
+				</div>
+
+                <div class="form-floating">
+                    <img src="/captcha/image/3370be4d2fe301ae3431730ad8df020a4b5fcb40/" alt="captcha" class="captcha" />
+<input type="hidden" name="captcha_0" value="3370be4d2fe301ae3431730ad8df020a4b5fcb40" required id="id_captcha_0" autocomplete="off"><input type="text" name="captcha_1" required id="id_captcha_1" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false">
+				</div>
+
+				<button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+			</form>
+		</main>
+	</body>
+</html>
+GET /captcha/image/3370be4d2fe301ae3431730ad8df020a4b5fcb40/ HTTP/1.1
+Host: cha.ccu-ctf.be:5789
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Referer: http://cha.ccu-ctf.be:5789/login
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: csrftoken=YnSxxd1AriPumauhT1jyXZp6lKKEvJov; shortscc=44
+
+HTTP/1.1 200 OK
+Server: nginx/1.23.2
+Date: Wed, 17 Apr 2024 12:45:28 GMT
+Content-Type: image/png
+Content-Length: 1952
+Connection: keep-alive
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+
+.PNG
+.
+...
+IHDR...C...........4
+...gIDATx....S.......]6..Iv....4..@...0..[TT......s.t:.E}...W.o...T......^. T..k(T.. <H6.1.....	..\g...u..Iv..=..9....."..x+........!I..8]N...v.	.AS.P ...
+..+.....-.)).t9.+c.ZX...#!"h)MQ..C.N..ja.&.
+.... .k%bI.}...r..v.....B0....D,!	...ax..$........=.z.} ..lSzj:.C.=l....d..n.X.y.....;.m.mS3S.` >2.J.z.....#.........{.`.v......2J..Y..........g..u....EQZJggf..).j.2J..h.{..........K..B)....I....</=.eS..N.....N$...lv..aQ........Pl.(.Q .`...18.k.4..
+....y..i...E.b(.BQ.A...ga,.....
+.4.T..T%.ba.........=Q{...7..h5Z._@..P(..b..~.i....<U}J!S ..=)......<Z..E.....$......N.p......CcC.=..Y.\WS'&.\.....}.J....AL.OV..?./.K|>.~I..?.4,..:.`.>Vy,I....A..0-.......&.L...U....9...'..#......)59...h4".(#-.....R{M<I.$A...^..H$ba,v.}aq!59.b....B..e....[.....4E_.......-.0.
+.............t....FK.$...&..`..V...4.M.....G...Xm....`0X{...P.I...4. ..1.|.......T.T.W.i9..^.w.......C....}P.T(.&^.O.).../6_4.....F~...i.$..@$.e...?U...........Z^]...9..	.-...u..xL+............
+.$e....kna..v......;.. .$.......@0...Y..hkB......
+..nt|.j.U../.....)..<q.W.Q.&........ JJqY5.......7.n..u...../..S.8?...ffY6#-CL..s	..I. ......x"....$..CQT..:{..........:...y.y.A...r.z.{~..9v<..r.r...u<I(..x.q....GC....O>.fhwd.@0....p.J....................x.P...Z.A.P LQ..)>".e....
+..[....h.@.....t!/7O".D3..+a.5.AB.PL.	.A.../H..w}r.,..k..D"........o_.......%.4E...(..
+..H..t...]....N..
+.x".c8. ..p......A.>s.*Y........].V.........\.K......j..A...hw......q..%...*.J .D#..+H...b^.v...d...=.p^.T....Y.B...a.x2.e..Q.9....8>=.....\.X.m.sI.....Z.@....R..........j..D<.@.....p...;......\....6^l.~.].y..2.$..#Gc..]....5....8..hJJ.q>cc.F.z.{..wUy.ce...,..R..+...Q...g.M+&..x..J._.....I......?
+..7.I.....3.2bk..".....JJ..9Sw....-...^...2.A....._.w.^..../.K%R...P.} ../.j...7..~...?. ........@.T.4.T.U.R:vRv!.*....S.S..].$b.V.u8..V....xrZ~(.....a..(.(.H~Y>....n..f~.}...d.l........[.....a.-..alv.>'.XwY...ja....G..C.....s..6.m....w.....To.9.....w$o....yz{H.
+.B4.#.......IEND.B`.GET /static/bfcaptcha/css/bootstrap.min.css.map HTTP/1.1
+Host: cha.ccu-ctf.be:5789
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36 OPR/107.0.0.0
+Accept-Encoding: gzip, deflate
+Accept-Language: fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: csrftoken=YnSxxd1AriPumauhT1jyXZp6lKKEvJov; shortscc=44
+
+HTTP/1.1 404 Not Found
+Server: nginx/1.23.2
+Date: Wed, 17 Apr 2024 12:45:29 GMT
+Content-Type: text/html
+Content-Length: 555
+Connection: keep-alive
+
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx/1.23.2</center>
+</body>
+</html>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->

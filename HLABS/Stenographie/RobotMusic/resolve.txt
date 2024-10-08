@@ -1,0 +1,4 @@
+Solution :
+
+go sur ce site, mettre le fichier et le flag apparait (facile)
+https://morsecode.world/international/decoder/audio-decoder-adaptive.html
