@@ -1,24 +1,20 @@
-from pwn import xor
+import binascii
 
-# Your flag hex
-flag = bytes.fromhex('0A550E0E4824005E69023843795657565D5D2F685E446C5B00792C0016331B594D')
+# Convert the hex string to bytes
+hex_string = "680d090e194f4121646f0768422d6c6c1b745e5d6c2a216c197e2846453c170f22424431113752015e316b5a3a656e12795a1b4158331d30072112766231500d131141"
+ciphertext = bytes.fromhex(hex_string)
 
-# XOR with the beginning of the known flag
-print(xor(flag, 'helb{'.encode()))
+# Function to XOR with a given key
+def xor_decrypt(ciphertext, key):
+    return bytes([b ^ key for b in ciphertext])
 
-# If the result looks valid, you can continue trying to guess more parts of the flag
-
-# Let's assume you're trying a key length of 5 (based on 'helb{')
-possible_key = xor(flag[:5], 'helb{'.encode())
-print(possible_key)
-
-# Now try XORing the entire flag with the repeating key
-decrypted_flag = xor(flag, possible_key * (len(flag) // len(possible_key)))
-print(decrypted_flag)
-
-from pwn import xor
-
-for key_len in range(1, len(flag) + 1):
-    possible_key = xor(flag[:key_len], 'helb{'.encode()[:key_len])
-    decrypted_flag = xor(flag, possible_key * (len(flag) // len(possible_key)))
-    print(f"Key length {key_len}: {decrypted_flag}")
+# Try different keys from 0 to 255
+for key in range(256):
+    decrypted = xor_decrypt(ciphertext, key)
+    try:
+        # Check if the decrypted text is readable ASCII
+        if (decrypted.decode('ascii').startswith("helb")):
+            print(f"Key {key}: {decrypted.decode('ascii')}")
+    except UnicodeDecodeError:
+        # Ignore if the text is not readable
+        continue

