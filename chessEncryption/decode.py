@@ -1,5 +1,6 @@
 import os
 import sys
+
 from time import time
 from math import log2
 from chess import pgn, Board
@@ -17,7 +18,7 @@ def decode(folder_path: str, output_file_path: str):
     for filename in os.listdir(folder_path):
         if filename.endswith(".pgn"):
             with open(os.path.join(folder_path, filename), "r") as file:
-                pgn_string += file.read() + "\n\n"
+                pgn_string += file.read().strip()
 
     # Load games from concatenated PGN string
     games: list[pgn.Game] = get_pgn_games(pgn_string)
@@ -78,9 +79,9 @@ def decode(folder_path: str, output_file_path: str):
 
 # Run the decode function if executed as a script
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <pgn_folder_path> <output_file_path>")
-    else:
+    if len(sys.argv) == 3:
         folder_path = sys.argv[1]
         output_file_path = sys.argv[2]
         decode(folder_path, output_file_path)
+    else:
+        print("Usage: python3 decode.py <pgn_folder_path> <output_file_path>")

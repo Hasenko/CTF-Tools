@@ -1,11 +1,12 @@
 import os
+import sys
+
 from time import time
 from math import log2
 from chess import pgn, Board
 from util import to_binary_string
-import sys
 
-def encode(file_path: str, output_directory: str):
+def encode(file_path: str, output_directory: str = "output_pgn"):
     # Start the encoding process
     start_time = time()
 
@@ -91,9 +92,12 @@ def encode(file_path: str, output_directory: str):
 
 # Run the decode function if executed as a script
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <file_to_encode> <pgn_output_folder>")
+    if len(sys.argv) == 3:
+        input_file_path = sys.argv[1]
+        output_folder_path = sys.argv[2]
+        encode(input_file_path, output_folder_path)
+    elif len(sys.argv) == 2:
+        input_file_path = sys.argv[1]
+        encode(input_file_path)
     else:
-        file_path = sys.argv[1]
-        output_folder = sys.argv[2]
-        encode(file_path, output_folder)
+        print("Usage: python3 encode.py <file_to_encode> [output_folder_path]")
