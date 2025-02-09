@@ -15,3 +15,10 @@ print("Modified content has been written to 'output.txt'.")
 
 print("Color codes have been removed. Cleaned content has been written to 'cleaned_output.txt'.")
 
+"""
+solution :
+    The netcat server send a series of character, delimited by ANSI color.
+
+    To resolve the challenge, I had to write every output in a file. Then after, I had to add '\n' when a ';' was found.
+    After that, by unzoom at maximum, i could find an ascii art with the flag. 
+"""

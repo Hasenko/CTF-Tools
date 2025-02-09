@@ -19,3 +19,15 @@ with open("output.svg", "w") as file:
     file.write(updated_svg)
 
 print("Wall thickness increased by 4 pixels in output.svg")
+
+"""
+title : Labyrinth
+
+description : Find the correct way
+
+file given : labyrint.svg
+
+solution :
+    Using a maze solver (https://ynyeh0221.github.io/Collection-of-Website-Works/day33.html), the shortest path will give the flag.
+    I had to increase thickness of wall to make it work on the website.
+"""

@@ -1,20 +1,11 @@
-from PIL import Image
-import binascii
+"""
+title : Gary
 
-# Function to convert image to binary
-def image_to_binary(image_path):
-    # Open the image file
-    with open(image_path, "rb") as image_file:
-        # Read the image file and convert it to binary
-        binary_data = binascii.b2a_bin(image_file.read())
-    return binary_data
+description : Like a snail, I love binary !
 
-# Example usage
-image_path = "flag.png"  # Replace with your image path
-binary_data = image_to_binary(image_path)
+file given : flag.png
 
-# Save binary data to a text file (optional)
-with open("image_binary.txt", "wb") as binary_file:
-    binary_file.write(binary_data)
-
-print(f"Image has been converted to binary and saved as 'image_binary.txt'.")
+solution :
+    The solution here is to browse the image pattern in a spiral way from the center. When a black square is found, a 1 is added to a string, if it's a white square, add a 0.
+    By continuing this to the end, the binarie string should be converted in ascii and the flag will be revealed.
+"""
