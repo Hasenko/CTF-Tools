@@ -2,15 +2,21 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])  # Accepts both GET and POST
 def capture_data():
-    leak = request.args.get('leak', 'No leak provided')
+    if request.method == 'POST':
+        received_data = request.form.to_dict()  # Retrieve POST data
+        print("POST REVEIVED")
+    else:
+        received_data = request.args.to_dict()  # Retrieve GET parameters
+
     referer = request.headers.get('Referer', 'No referer')
     user_agent = request.headers.get('User-Agent', 'No user agent')
     ip_address = request.headers.get('X-Forwarded-For', request.remote_addr)
 
-    print(f"\n[+] Incoming Request:")
-    print(f"    - Leak: {leak}")
+    print("\n[+] Incoming Request:")
+    print(f"    - Method: {request.method}")
+    print(f"    - Data Received: {received_data}")
     print(f"    - Referer: {referer}")
     print(f"    - User-Agent: {user_agent}")
     print(f"    - IP Address: {ip_address}")
