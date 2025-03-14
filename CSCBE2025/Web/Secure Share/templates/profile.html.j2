@@ -1,0 +1,29 @@
+{% extends "base.html.j2" %}
+{% block title %}{% if public %}Directory details{% else %}My Employee Profile{% endif %}{% endblock %}
+{% block header %}{% if public %}Directory details{% else %}My Employee Profile{% endif %}{% endblock %}
+{% block content %}
+<section class="card">
+    <div class="profile-field">
+        <span class="profile-label">Employee ID:</span> {{ username }}
+    </div>
+    <div class="profile-field">
+        <span class="profile-label">Work Email:</span> {{ email }}
+    </div>
+    {% if api_key %}
+    <div class="private-field">
+        <span class="profile-label">API Key:</span> {{ api_key }}
+    </div>
+    {% else %}
+        {% if not verified %}
+        <div class="info-text warning">
+            ⚠️ Note: Non-verified users are not eligible to receive an API key.
+        </div>
+        {% endif %}
+    {% endif %}
+</section>
+{% if public %}
+<a href="{{ url_for('directory') }}" class="back-link">← Back to Directory</a>
+{% else %}
+<a href="{{ url_for('home') }}" class="back-link">← Back to Home</a>
+{% endif %}
+{% endblock %}
