@@ -1,0 +1,62 @@
+{% extends "base.html.j2" %}
+{% block title %}Home{% endblock %}
+{% block header %}Employee Portal{% endblock %}
+{% block content %}
+<section class="info-text">
+    Welcome to SecureShare, TechCorp's internal employee directory. Access your profile and connect with team members securely.
+</section>
+{% if 'user_id' in session %}
+<section class="card">
+    <p>👤 Signed in as: <strong>{{ users[session['user_id']]['username'] }}</strong></p>
+    <p>
+        <a href="{{ url_for('profile') }}">View Employee Profile</a>
+        &nbsp;|&nbsp;
+        <a href="{{ url_for('directory') }}">Browse Directory</a>
+        &nbsp;|&nbsp;
+        <a href="{{ url_for('logout') }}">Sign Out</a>
+    </p>
+</section>
+{% else %}
+<section class="card">
+    {% if error %}
+    <div class="error-message">❌ {{ error }}</div>
+    {% endif %}
+    <form action="{{ url_for('login') }}" method="post">
+        <h2>Sign In</h2>
+        <p>
+            <label for="username">Employee ID:</label>
+            <input type="text" name="username" id="username" required />
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required />
+        </p>
+        <p><input type="submit" value="Sign In" /></p>
+    </form>
+</section>
+<section class="card">
+    <div class="info-text warning">
+        ⚠️ Note: Registration is temporarily open while our dev team integrates with the centralized authentication system.
+    </div>
+    {% if reg_error %}
+    <div class="error-message">❌ {{ reg_error }}</div>
+    {% endif %}
+    <form action="{{ url_for('register') }}" method="post">
+        <h2>Register New Account</h2>
+        <p>
+            <label for="reg_username">Choose Employee ID:</label>
+            <input type="text" name="username" id="reg_username" required />
+        </p>
+        <p>
+            <label for="reg_email">Work Email:</label>
+            <input type="text" name="email" id="reg_email" required />
+        </p>
+        <p>
+            <label for="reg_password">Password:</label>
+            <input type="password" name="password" id="reg_password" required />
+        </p>
+        <p><input type="submit" value="Register" /></p>
+    </form>
+</section>
+{% endif %}
+{% endblock %}

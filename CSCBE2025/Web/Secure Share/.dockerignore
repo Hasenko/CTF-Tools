@@ -1,6 +1,0 @@
-.venv
-.zed
-__pycache__/
-
-Dockerfile
-Justfile

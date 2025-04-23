@@ -1,0 +1,11 @@
+setup:
+    uv install
+
+run:
+    FLAG="CSCBE{DUMMY_FLAG}" FLASK_DEBUG=true uv run flask run
+
+docker-build:
+    docker build -t secureshare:latest .
+
+docker-run:
+    docker run -p 8000:8000 --env-file=./.env secureshare:latest

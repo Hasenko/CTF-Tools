@@ -3,3 +3,5 @@
 
 # Ignore .vhd files
 *.vhd
+CSCBE2025/Forensic/Apple.cake/apple.cake.xz
+CSCBE2025/Mobile/Snek/ghidra_project/snek.rep/idata/00/~00000000.db/snapshotA.grf
