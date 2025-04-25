@@ -54,7 +54,7 @@ def decode_qr_code(image_path, output_file):
             f.write("Data: {}\n\n".format(obj.data.decode('utf-8')))
 
 # Example usage:
-image_url = "http://cha.ccu-ctf.be:4569/qrcode"
+image_url = "http://cha.ccu-ctf.be:8001/qrcode"
 save_path = "qrcode.png"
 download_image(image_url, save_path)
 

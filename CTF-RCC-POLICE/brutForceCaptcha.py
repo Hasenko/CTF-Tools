@@ -3,7 +3,7 @@ from PIL import Image
 import pytesseract
 from bs4 import BeautifulSoup
 
-url = "http://cha.ccu-ctf.be:5789"
+url = "http://cha.ccu-ctf.be:8002"
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def get_token_and_captcha_image(session, url):
@@ -43,7 +43,7 @@ for i in range(10000):
     print("CSRF Token:", token)
 
     # Download the captcha image
-    download_captcha_image(session, "http://cha.ccu-ctf.be:5789" + captcha_img_url)
+    download_captcha_image(session, "http://cha.ccu-ctf.be:8002" + captcha_img_url)
     print(captcha_img_url)
 
     captcha_image_path = "captcha.png"
