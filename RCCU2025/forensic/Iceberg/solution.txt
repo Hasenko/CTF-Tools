@@ -1,0 +1,3 @@
+Installer ce tool : https://github.com/flawwan/modsize
+
+Lancer le code avec comme dimension 2000 et le truc recalcule le checksum pour toi
